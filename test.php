@@ -11,7 +11,7 @@ $total = $exm->getTotalRows();
 $question = $exm->getQuesByNumber($number);
 ?>
 
-<?php 
+<?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $process = $pro->processData($_POST);
 }
@@ -27,14 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <div class="test">
         <form method="post" action="">
-            <table> 
+            <table>
                 <tr>
                     <td colspan="2">
                         <h3>Que <?php echo $question['quesNo']; ?>: <?php echo $question['ques']; ?></h3>
                     </td>
                 </tr>
 
-                <?php 
+                <?php
                 $answer = $exm->getAnswer($number);
                 if ($answer) {
                     while ($result = $answer->fetch_assoc()) {
